@@ -1,0 +1,15 @@
+
+<% # if @login != nil %>
+You are already logged in as <%= @login %>
+<% # end %>
+<%= @status %>
+<form action="/login" method="post">
+  <p>User Name</p>
+  <input type="text" name="user">
+  <p>Password</p>
+  <input type="password" name="pass">
+  <br><br>
+  <input type="submit">
+</form>
+<p>This website's data s NOT ENCRYPTED. Do NOT enter personal information or shared passwords into fields</p>
+</div>

@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <style>
+      #resize { width: 400px; height: 150px; }
+  </style>
+  <script>
+      $(function() {
+          $( "#resize").resizable();
+      });
+  </script>
+</head>
+<div>
+  <a href="/"><h2>Sauper Magiuse Forums</h2></a>
+
+  <%= @op[1] %> by <%= @op[0] %>
+  <br><br>
+  <%= @op[2] %>
+
+  <form method="post" action="/thread?thread=<%= @thread %>">
+    <p>Comment:</p>
+    <textarea id="resize" name="text"></textarea>
+    <input type="submit">
+  </form>
+
+  <% @posts.each do |c| %>
+      <p><%= c[1] %> says:</p>
+      <%= c[0] %>
+      <br><br>
+  <% end %>
+</div>
